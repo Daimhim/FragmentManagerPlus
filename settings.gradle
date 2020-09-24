@@ -1,0 +1,3 @@
+include ':fragmentplus'
+include ':fragmentmanagerplus'
+include ':app'
