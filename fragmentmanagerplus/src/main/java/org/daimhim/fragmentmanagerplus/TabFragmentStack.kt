@@ -1,5 +1,4 @@
 package org.daimhim.fragmentmanagerplus
 
-class FragmentStack {
-
+class TabFragmentStack : BaseStack(){
 }

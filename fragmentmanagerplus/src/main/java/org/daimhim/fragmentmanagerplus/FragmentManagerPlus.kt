@@ -1,5 +1,7 @@
 package org.daimhim.fragmentmanagerplus
 
-class FragmentManagerPlus {
+import android.util.SparseArray
 
+class FragmentManagerPlus {
+    private var fragmentStackManager = SparseArray<FragmentStack>()
 }
