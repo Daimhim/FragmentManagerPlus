@@ -10,7 +10,14 @@ class FragmentStack : Stack<FragmentItem>() {
         if (o !is FragmentItem){
             return -1
         }
-        o.withIntent?.component?.toShortString()
-        return super.search(o)
+        var index = -1
+        val item : FragmentItem? = filterIndexed { indexIt, fragmentItem ->
+            if(o.withIntent?.component?.equals(fragmentItem) == true){
+                index = indexIt
+                return@filterIndexed true
+            }
+            return@filterIndexed false
+        }.last()
+        return index
     }
 }
