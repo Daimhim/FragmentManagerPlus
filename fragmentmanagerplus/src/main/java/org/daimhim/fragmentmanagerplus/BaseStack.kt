@@ -14,4 +14,9 @@ open class BaseStack {
      * 清理这个之上所有fragment
      */
     val FLAG_FRAGMENT_CLEAR_TOP = Intent.FLAG_ACTIVITY_CLEAR_TOP
+
+    /**
+     * 清空所有
+     */
+    val FLAG_FRAGMENT_CLEAR_TASK = Intent.FLAG_ACTIVITY_CLEAR_TASK
 }

@@ -37,4 +37,8 @@ open class ActivityPlus : AppCompatActivity() {
         super.onBackPressed()
     }
 
+
+    fun proxyBackPressed(){
+        super.onBackPressed()
+    }
 }
