@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.SparseArray
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import org.daimhim.fragmentmanagerplus.FragmentItem
 import java.lang.ref.SoftReference
 import java.util.*
@@ -23,15 +24,24 @@ open class ActivityPlus : AppCompatActivity() {
             fragmentStackManager[id].push(Stack<FragmentItem>())
         }
 //        if (intent.flags == )
-        if (!fragmentStackManager[id].peek().empty()){
-//            fragmentStackManager[id].peek().search()
-        }
+//        if (!fragmentStackManager[id].peek().empty()){
+//            val search = fragmentStackManager[id].peek().search(intent)
+//
+//        }
         val fragmentItem = FragmentItem()
         fragmentItem.withIntent = intent
+        fragmentStackManager[id].peek().push(fragmentItem)
+        getSystemManager()
+            .beginTransaction()
+            .setPrimaryNavigationFragment(fragmentItem.fragmentItem.get())
+            .commit()
 //        fragmentItem.fragmentItem = SoftReference()
 
     }
 
+    fun getSystemManager(): FragmentManager {
+        return supportFragmentManager
+    }
 
     override fun onBackPressed() {
         super.onBackPressed()

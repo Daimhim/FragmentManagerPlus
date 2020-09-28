@@ -1,5 +1,6 @@
 package org.daimhim.fragmentmanagerplus
 
+import android.content.Intent
 import java.util.*
 
 class FragmentStack : Stack<FragmentItem>() {
@@ -7,17 +8,14 @@ class FragmentStack : Stack<FragmentItem>() {
         if (o == null){
             return -1
         }
-        if (o !is FragmentItem){
+        if (o !is Intent){
             return -1
         }
-        var index = -1
-        val item : FragmentItem? = filterIndexed { indexIt, fragmentItem ->
-            if(o.withIntent?.component?.equals(fragmentItem) == true){
-                index = indexIt
-                return@filterIndexed true
-            }
-            return@filterIndexed false
-        }.last()
+        var index = size
+        findLast {
+            index--
+            return@findLast o.component?.equals(it) == true
+        }
         return index
     }
 }

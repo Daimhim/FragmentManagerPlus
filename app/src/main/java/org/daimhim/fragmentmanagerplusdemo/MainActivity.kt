@@ -13,9 +13,9 @@ class MainActivity : ActivityPlus() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        val intent = Intent()
-//        intent.setClass(this,HeadFragment::class.java)
-//        startFragment(R.id.fl_head_content,intent)
+        val intent = Intent()
+        intent.setClass(this,HeadFragment::class.java)
+        startFragment(R.id.fl_head_content,intent)
     }
 
 
