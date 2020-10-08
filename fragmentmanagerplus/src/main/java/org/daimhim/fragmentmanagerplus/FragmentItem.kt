@@ -8,9 +8,9 @@ class FragmentItem {
     lateinit var fragmentItem:SoftReference<Fragment>
     var withIntent: Intent? = null
     var backIntent: Intent? = null
-    fun createFragment():Fragment{
-
-        "${withIntent?.component?.packageName}${withIntent?.component?.className}"
-
-    }
+//    fun createFragment():Fragment{
+//
+//        "${withIntent?.component?.packageName}${withIntent?.component?.className}"
+//
+//    }
 }
