@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "org.daimhim.fragmentmanagerplusdemo"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -22,6 +22,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -31,12 +35,16 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
     implementation 'androidx.viewpager2:viewpager2:1.1.0-alpha01'
-    implementation project(path: ':fragmentplus')
+//    implementation project(path: ':fragmentplus')
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     // Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.0"
     implementation "androidx.navigation:navigation-ui-ktx:2.3.0"
+    //代码
+    implementation 'org.daimhim.rvdecoration:rvadapter:1.4.1'
+    implementation 'org.daimhim.rvdecoration:rvadapterex:1.0.2'
+    implementation 'org.daimhim.rvdecoration:rvdecoration:1.1.2'
 
 }

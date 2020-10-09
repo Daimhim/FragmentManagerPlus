@@ -1,10 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/app_navigation"
-    app:startDestination="@id/homeMenuFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/home_menu_fragment">
 
     <fragment
-        android:id="@+id/homeMenuFragment"
-        android:name="org.daimhim.fragmentmanagerplusdemo.ui.homemenu.HomeMenuFragment"
-        android:label="HomeMenuFragment" />
+        android:id="@+id/home_menu_fragment"
+        android:name="org.daimhim.fragmentmanagerplusdemo.ui.home.homemenu.HomeMenuFragment"
+        tools:layout="@layout/fragment_home_menu"
+        android:label="HomeMenuFragment" >
+        <action
+            android:id="@+id/action_home_menu_to_place_order"
+            app:destination="@+id/place_order_fragment"/>
+        <action
+            android:id="@+id/action_home_menu_to_table_order"
+            app:destination="@+id/table_order_fragment"/>
+        <action
+            android:id="@+id/action_home_menu_to_order_history"
+            app:destination="@+id/order_history_fragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/place_order_fragment"
+        tools:layout="@layout/fragment_place_order"
+        android:label="PlaceOrderFragment"
+        android:name="org.daimhim.fragmentmanagerplusdemo.ui.home.placeorder.PlaceOrderFragment">
+        <action
+            android:id="@+id/action_place_order_to_home_menu"
+            app:destination="@+id/home_menu_fragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/table_order_fragment"
+        tools:layout="@layout/fragment_table_order"
+        android:label="PlaceOrderFragment"
+        android:name="org.daimhim.fragmentmanagerplusdemo.ui.home.placeorder.PlaceOrderFragment">
+        <action
+            android:id="@+id/action_table_order_to_home_menu"
+            app:destination="@+id/home_menu_fragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/order_history_fragment"
+        tools:layout="@layout/fragment_order_history"
+        android:label="OrderHistoryFragment"
+        android:name="org.daimhim.fragmentmanagerplusdemo.ui.home.placeorder.PlaceOrderFragment">
+        <action
+            android:id="@+id/action_order_history_to_home_menu"
+            app:destination="@+id/home_menu_fragment"/>
+    </fragment>
 </navigation>

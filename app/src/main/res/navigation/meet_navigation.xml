@@ -3,22 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
-    app:startDestination="@id/welcome_fragment">
+    app:startDestination="@id/login_fragment">
+
 
     <fragment
-        android:id="@+id/welcome_fragment"
-        android:name="org.daimhim.fragmentmanagerplusdemo.ui.welcome.WelcomeFragment"
-        android:label="WelcomeFragment"
-        tools:layout="@layout/fragment_welcome">
-        <action
-            android:id="@+id/action_welcome_to_login"
-            app:destination="@+id/login_fragment"/>
-    </fragment>
-    <fragment
         android:id="@+id/login_fragment"
-        android:name="org.daimhim.fragmentmanagerplusdemo.ui.login.LoginFragment"
+        android:name="org.daimhim.fragmentmanagerplusdemo.ui.salesclerk.login.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/login_to_registered_action"
+            app:destination="@+id/registered_fragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/registered_fragment"
+        android:name="org.daimhim.fragmentmanagerplusdemo.ui.salesclerk.registered.RegisteredFragment"
+        android:label="RegisteredFragment"
+        tools:layout="@layout/fragment_registered">
 
     </fragment>
 </navigation>
