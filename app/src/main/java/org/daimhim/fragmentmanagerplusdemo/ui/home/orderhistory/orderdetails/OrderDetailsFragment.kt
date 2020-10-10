@@ -1,17 +1,17 @@
-package org.daimhim.fragmentmanagerplusdemo.ui.home.orderhistory
+package org.daimhim.fragmentmanagerplusdemo.ui.home.orderhistory.orderdetails
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.fragment_order_history.*
+import kotlinx.android.synthetic.main.fragment_order_details.*
 import org.daimhim.fragmentmanagerplusdemo.R
 
-class OrderHistoryFragment : Fragment(R.layout.fragment_order_history) {
+class OrderDetailsFragment : Fragment(R.layout.fragment_order_details) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tv_go_details.setOnClickListener {
-            findNavController().navigate(R.id.order_history_to_order_details)
+        iv_back.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 }

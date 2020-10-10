@@ -7,6 +7,7 @@
         android:id="@+id/rv_menu"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"
+        android:layout_gravity="start"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </FrameLayout>
