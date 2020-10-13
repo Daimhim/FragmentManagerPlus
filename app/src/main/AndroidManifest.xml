@@ -7,6 +7,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:name=".StarApp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.welcome.WelcomeActivity">
@@ -20,7 +21,6 @@
             <nav-graph android:value="@navigation/meet_navigation"/>
         </activity>
         <activity android:name=".ui.home.MainActivity">
-            <nav-graph android:value="@navigation/app_navigation"/>
         </activity>
     </application>
 
