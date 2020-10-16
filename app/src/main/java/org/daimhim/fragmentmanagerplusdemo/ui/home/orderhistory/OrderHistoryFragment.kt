@@ -7,17 +7,45 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_order_history.*
 import org.daimhim.fragmentmanagerplusdemo.R
+import rv.daimhim.rvdecoration.DecorationBuilder
 import timber.log.Timber
 
 class OrderHistoryFragment : Fragment(R.layout.fragment_order_history) {
+    private var orderHistoryAdapter : OrderHistoryAdapter2? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Timber.i("onViewCreated" + view?.hashCode())
-//        tv_go_details.setOnClickListener {
-//            findNavController().navigate(R.id.order_history_to_order_details)
-//        }
+        Timber.i("onViewCreated %s %s",rv_layout.hashCode(),view.findViewById<View>(R.id.rv_layout).hashCode())
+        initView()
+        initListener()
+    }
+
+    private fun initListener() {
+        orderHistoryAdapter?.setOnItemClickListener { adapter, view, position ->
+            findNavController().navigate(R.id.order_history_to_order_details)
+        }
+
+    }
+
+    private fun initView() {
+        if (orderHistoryAdapter == null) {
+            orderHistoryAdapter = OrderHistoryAdapter2()
+        }
+        val mutableListOf = mutableListOf<String>()
+        for (i in 0 until 10) {
+            mutableListOf.add(i.toString())
+        }
+        orderHistoryAdapter?.addData(mutableListOf)
+        orderHistoryAdapter?.setEmptyView(R.layout.empty_view)
+        rv_layout.adapter = orderHistoryAdapter
+        DecorationBuilder
+            .Builder(rv_layout)
+            .spacing(R.dimen.dimen_size_1)
+            .divider(R.color.colorPrimary)
+            .create(101)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
