@@ -15,9 +15,9 @@ class OrderHistoryFragment : Fragment(R.layout.fragment_order_history) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Timber.i("onViewCreated" + view?.hashCode())
-        tv_go_details.setOnClickListener {
-            findNavController().navigate(R.id.order_history_to_order_details)
-        }
+//        tv_go_details.setOnClickListener {
+//            findNavController().navigate(R.id.order_history_to_order_details)
+//        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
