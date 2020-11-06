@@ -13,5 +13,6 @@ class OrderDetailsFragment : Fragment(R.layout.fragment_order_details) {
         iv_back.setOnClickListener {
             findNavController().navigateUp()
         }
+        tv_login.setOnClickListener { findNavController().navigate(R.id.action_fragment_order_details_to_fragment_order_history) }
     }
 }

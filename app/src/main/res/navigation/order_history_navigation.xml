@@ -19,5 +19,11 @@
         android:id="@+id/fragment_order_details"
         tools:layout="@layout/fragment_order_details"
         android:name="org.daimhim.fragmentmanagerplusdemo.ui.home.orderhistory.orderdetails.OrderDetailsFragment"
-        android:label="OrderDetailsFragment" />
+        android:label="OrderDetailsFragment" >
+
+        <action
+            android:id="@+id/action_fragment_order_details_to_fragment_order_history"
+            app:launchSingleTop="true"
+            app:destination="@id/fragment_order_history" />
+    </fragment>
 </navigation>
